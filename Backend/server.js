@@ -52,7 +52,7 @@ if (process.env.NODE_ENV === "production") {
 connectToMongoose()
   .then(() => {
     app.listen(process.env.PORT || 5072, () => {
-      console.log("server is running on http://localhost:5000");
+      console.log("server is running on https://e-banking-backend.onrender.com");
     });
   })
   .catch((err) => {
