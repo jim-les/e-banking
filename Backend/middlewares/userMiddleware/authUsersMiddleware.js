@@ -14,7 +14,7 @@ const authUserProtect = async (req, res, next) => {
       //Get Token from header
       token = req.headers.authorization.split(" ")[1];
       //verify token
-      decoded = jwt.verify(token, process.env.JWT_SECRET);
+      decoded = jwt.verify(token, '123456765432123456');
       //Get User from Token
       user = await User.findById(decoded.id);
       if (!user) {

@@ -74,31 +74,35 @@ const createUser = async (req, res) => {
 //@route  >>>> GET /api/users/login
 //@Access >>>> public
 const userLogin = async (req, res) => {
-  //check for empty body
-  if (!req.body.email || !req.body.password)
-    return res.status(404).send("empty body request");
+  // Check for an empty body
+  if (!req.body.email || !req.body.password) {
+    return res.status(404).send("Empty body request");
+  }
+
   const { email, password } = req.body;
-  let user;
   try {
-    user = await User.findOne({ email });
-    //ckeck for password
+    // Find user by email
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).send("Wrong Credentials - email not found");
+    }
+
+    // Check password
     const isCorrectPassword = await bcrypt.compare(password, user.password);
 
     if (isCorrectPassword) {
       return res.status(200).json({
         id: user.id,
-        name: user.name,
+        name: user.user_name,
         email: user.email,
         token: generateUsersToken(user.id, user.email),
       });
     } else {
-      return res.status(404).send("Wrong Credintials - wrong password");
+      return res.status(404).send("Wrong Credentials - wrong password");
     }
   } catch (error) {
-    if (!user || !isCorrectPassword)
-      return res
-        .status(404)
-        .send("Wrong Credintials - wrong email or password");
+    console.error("Error during user login:", error);
     res.status(500).send("Ooops!! Something Went Wrong, Try again...");
   }
 };

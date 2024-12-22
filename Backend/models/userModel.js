@@ -42,14 +42,15 @@ const userSchema = new mongoose.Schema(
     },
     phone: {
       type: Number,
-      required: [true, "Please Type AN EGY Phone Number!"],
+      required: [true, "Please provide a Kenyan phone number!"],
       unique: true,
       validate: {
         validator: function (v) {
-          let regex = new RegExp("^(1)[0-2,5]{1}[0-9]{8}");
-          return regex.test(v) && v.toString().length === 10;
+          // Kenyan phone numbers start with either 07, 01, or international format 254
+          const regex = new RegExp("^(?:254|0)((7|1)[0-9]{8})$");
+          return regex.test(v.toString());
         },
-        message: "Please Enter A Valid EGY Phone Number!",
+        message: "Please enter a valid Kenyan phone number!",
       },
     },
     full_addresse: {
