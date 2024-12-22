@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/users/";
+const API_URL = "https://e-banking-backend.onrender.com/api/users/";
 
 //Get All Users
 const getAllUsers = async (adminData) => {

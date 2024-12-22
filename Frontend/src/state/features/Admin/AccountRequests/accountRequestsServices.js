@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/request/";
+const API_URL = "https://e-banking-backend.onrender.com/api/request/";
 
-const CREATE_ACCOUNT_API_URL = "http://localhost:5000/api/account/create";
+const CREATE_ACCOUNT_API_URL = "https://e-banking-backend.onrender.com/api/account/create";
 
 //Get All Account Requests
 const getAllAccountRequests = async (adminData) => {

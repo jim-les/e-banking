@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL ="http://localhost:5000/api/account/";
+const API_URL ="https://e-banking-backend.onrender.com/api/account/";
 
 //Get Account
 const getAccount = async (payload) => {

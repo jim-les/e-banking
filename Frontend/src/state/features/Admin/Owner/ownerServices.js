@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/admins/";
+const API_URL = "https://e-banking-backend.onrender.com/api/admins/";
 
 //Register Admin
 const adminRegister = async (payload) => {
