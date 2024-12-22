@@ -51,7 +51,7 @@ if (process.env.NODE_ENV === "production") {
 
 connectToMongoose()
   .then(() => {
-    app.listen(process.env.PORT || 5000, () => {
+    app.listen(process.env.PORT || 5072, () => {
       console.log("server is running on http://localhost:5000");
     });
   })
