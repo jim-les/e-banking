@@ -60,7 +60,7 @@ export const Deposit = () => {
   const handleSubmit = async (e) => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:5072/api/mpesa?amount=${depositAmount}&PhoneNumber=${mpesaNumber}`);
+      const response = await axios.get(`https://e-banking-backend.onrender.com/api/mpesa?amount=${depositAmount}&PhoneNumber=${mpesaNumber}`);
       console.log(response.data);
       e.preventDefault();
       //set msg to none first
