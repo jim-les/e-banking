@@ -100,6 +100,11 @@ export const UserNavLinks = ({ user }) => {
       to: account ? `/account/withdraw-logs/${account._id}` : " ",
     },
     {
+      title: "Report",
+      icon: FaCoins,
+      to: account ? `/account/report/${account._id}` : " ",
+    },
+    {
       title: "Setting",
       icon: AiFillSetting,
       to: userStatus === 0 ? `/profile/${user.id}/update` : " ",

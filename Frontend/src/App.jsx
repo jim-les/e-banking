@@ -34,6 +34,7 @@ import { RetrieveBalance } from "./components/account/RetrieveBalance";
 import { Contact } from "./components/forms/userForms/Contact";
 import { UnactiveSuspendedUser } from "./components/shared/UnactiveSuspendedUser";
 import { Account } from "./components/account/Account";
+import { Reports } from "./components/account/Reports";
 
 function App() {
   //Detect user
@@ -140,6 +141,7 @@ function App() {
               path="/retrieve-balance"
               element={<RetrieveBalance />}
             />
+            <Route exact path="/account/report/:id" element={<Reports />} />
             <Route exact path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
