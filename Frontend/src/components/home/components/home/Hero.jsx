@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 export default function Hero() {
   return (
     <section id="Home" className="relative overflow-hidden bg-slate-50 ">

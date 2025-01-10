@@ -38,8 +38,6 @@ export default function AdminLogin() {
   }, [isError, message, info, msg]);
 
   const handleSubmit = async (e) => {
-    console.log("Login", formInputs);
-    alert("Login", formInputs.password);
     e.preventDefault();
     //set msg to none first
     setFormInputs({ ...formInputs, msg: "" });
