@@ -11,7 +11,6 @@ import { PaymentMethods } from "../payment/PaymentMethods";
 import FormButton from "../shared/FormButton";
 import MessagesContainer from "../shared/MessagesContainer";
 import { UseResetStatus } from "../../hooks/UseResetStatus";
-import { set } from "mongoose";
 import axios from "axios";
 
 const paymentMethods = [

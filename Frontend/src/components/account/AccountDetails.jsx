@@ -2,40 +2,6 @@ import moment from "moment";
 import React from "react";
 import { FcRating } from "react-icons/fc";
 
-
-// const account = {
-//   "_id": 202511545302,
-//   "client_id": "2525500308",
-//   "balance": 600,
-//   "in": [],
-//   "out": [],
-//   "deposit_logs": [
-//       {
-//           "depositted_amount": 100,
-//           "_id": "67802f79ecd62451d154339a",
-//           "createdAt": "2025-01-09T20:20:09.891Z",
-//           "updatedAt": "2025-01-09T20:20:09.891Z"
-//       }
-//   ],
-//   "withdraw_logs": [
-//       {
-//           "withdrawn_amount": 50,
-//           "_id": "12345abcd6789efghi",
-//           "createdAt": "2025-01-09T20:30:00.123Z",
-//           "updatedAt": "2025-01-09T20:30:00.123Z"
-//       },
-//       {
-//           "withdrawn_amount": 30,
-//           "_id": "67890xyz12345pqrs",
-//           "createdAt": "2025-01-09T21:00:00.456Z",
-//           "updatedAt": "2025-01-09T21:00:00.456Z"
-//       }
-//   ],
-//   "createdAt": "2025-01-09T20:12:00.042Z",
-//   "updatedAt": "2025-01-09T20:20:09.891Z",
-//   "__v": 1
-// };
-
 export const AccountDetails = ({ account }) => {
   const InComingTransaction = account.in.reduce( (total, log) => {
     return total + log.balance_transfered;
